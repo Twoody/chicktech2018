@@ -164,7 +164,7 @@ Developers Environment && Tools: Bash, brew/chocolate, vim, git, Eclipse
 	having a GUI for the first iterations of any project.
 
 	At this point, we will stop and go through VIM, the terminal, and ensure that we all
-	have a working environment for our project. For che
+	have a working environment for our project. 
 
 ******************************************************************************************
 ******************************        Ch. 1        ***************************************
@@ -172,24 +172,125 @@ Developers Environment && Tools: Bash, brew/chocolate, vim, git, Eclipse
 ******************************                     ***************************************
 ******************************************************************************************
 	1. Grammar, Types, and ASCII
-		A. ASCII && UTF8
-		B. Strings
-		C. Int
-		D. Boolean
-		E. HelloWorld.java
+		A. Naming Conventions
+		B. Strings: ASCII && UTF8
+		C. Other Types: Int and Boolean
+		D. HelloWorld.java
 
 Standards: Naming Conventions and all of those symbols
-	Before coding, it is important to understand that there is a distinct difference with
-	each letter that we type. 
+	'urine' a lot of trouble if a single character is off when writing code. 
+	This will lead to some kind of `error` being `raised`. Before coding, it is important 
+	to understand that there is a distinct difference with each letter that we type.
+
+	For our project, we will utilize "camelCase" naming conventions. The most important
+	take-away from naming conventions is that all "classes" must begin with a capital
+	letter. And all methods of that parent class will then use camelCase. Futhermore,
+	all variables will also use camelCase. Other options are to "seperate_each_word" with
+	an underscore.
+
+	Finally, when we create a Class, it must start with a Capital letter, and must match
+	the filename specifically. For example, if we have `MyClass.java`, the file will have
+	in it `class MyClass{` somwhere near the top of the file.
+
+	Standards are important, as we will see in the jargon. We do not talk about driving
+	bicycles. We do not talk about flying trains. And the definition of professionalism
+	is to use the language others use in that field. In regards to a new computer language
+	the first thing that developers will look up is a HelloWorld program.
+
+	HelloWorld will simply print to console "Hello, World", or some variant as such.
+	And moreover, it teachs the developer how compiling their code and executing their
+	code are done. Is a `main` called? Are compiling and execution done at the same time?
+
+	In the case of Java, we see that we have `javac` and `java` commands. We also see
+	that we have a `.java` file extension. The "program" for a java file is as such:
+		1.		Create a .java file
+		2.		In the .java file, a `public static void main(String[] args)` MUST EXIST.
+		2.a.	The "main" will tell us what the .java file is for.
+		3.		We compile the .java file with the `javac` command as such:
+					javac MyProg.java
+		3.a.	The `javac` command will create a brand new .class file
+		4.		We run the .class file by calling `java` as such:
+					java MyProg
+				Notice how there is no .class at the end.
+
+Strings: ASCII && UTF8
+	For our purpose, we will use strings. Strings are the bread and butter of why we love
+	computers. They hold a message using an encoding set. This gets complicated real quick
+	but the gist is that a string is ANY text between two quotations marks. And the 
+	quotation marks should go on the same line.
+
+	Strings are a really complex item through and through. We could talk about them being 
+	immutable/mutable or how a string is a vector/array. We could talk about how each 
+	character in a string is in fact a reference to some other piece of memory, telling 
+	that character how to be represented. We could talk about how that piece of memory
+	being referenced is in fact being allocated by a FAT32 File System and binary logic
+	gates and hardware. 
+
+	But at the end of the day, a string is a datatype to store some kind of end-user
+	message, like, "Welcome to Facebook". "No results found for Foo". Etc. And these
+	strings typically are of type ASCII, UTF8, or UTF16. If something comes up in VIM
+	that is weird, and not fitting of ASCII, then it's probably a corrupted file, and
+	things might need to be flushed out and started anew (i.e.  )).
+	
+	People also use strings for storing basic data, like a persons name, IP address,
+	their website, and maybe their passwords.
+
+Other Types: Int
+	Int stands for integer. An integer is basically a number between 0 and Psy's
+	views for Gangam Style.
+	
+	We use integers to keep count of iterations, data entries, and to provide
+	weight to data values for algorithm purposes. Integers can also be negative!
+	
+	Integers can also be used to index a list. We will get to that later.
+
+Other Types: Booleans and Conditionals
+	Booleans are a fundamental block on how we think about computers. A boolean can either
+	be "true" or "false". And this represents the binary nature of computers far-and-large.
+	In my personal take, I think there are some fundamental issues with booleans that have
+	not yet been addressed, academically. Particularly that in our idea of "programs",
+	instances do not particularly have to be true or false. In some cases, a statement
+	might be "maybe". For example, in our wedding setup, if we looked at our pamphlet and
+	asked "Is the flower girl going to be a flower-dog?", this might and might not be true.
+	We will not know unti we are introduced to the flower girl, and in fact see that she is
+	a human.
+
+	But I digress. Booleans. Think coin flips. Think single purpose questions. Think bank
+	accounts and cars. We either have money for a new car, or we do not have money for a 
+	new car. The amount of money in out account is not representative of anything else. We
+	could even have money for a car, but not money for a house:
+		if canBuyNewCar == True && canBuyHouse == False:
+			print('point proven')
+
+	A boolean is typically a factual representation of something we know exists and are
+	actively recording in our program. Take a variable `isPlayerOnesTurn`. By the naming
+	convention, we see that this variable is asking a straight forward, binary question.
+	Is it player one's turn? IF it is player one's turn, then `isPlayerOnesTurn` is equall
+	to true. Otherwise (ELSE), `isPlayerOnesTurn` is equall to false.
+
+	Booleans take part in our conditionals. A conditional is a fancy way to say "A
+	statement that is going to make our code do something different."
+
+	For example, in our wedding, a conditional `if` and `else` could be:
+		if (isRaining == true){
+			getUmbrellas();
+		}
+		else{ //Automatically false
+			//keep Umbrellas In Car
+		}
+	
+	Conditionals are also used in For-Loops and While-Loops, which we will get to later.
 
 ******************************************************************************************
 **************************            Ch. 2           ************************************
-************************  Logic, Flags, Conditionsals   *************************************
+************************  Logic, Flags, Conditionsals   **********************************
 **************************                            ************************************
 ******************************************************************************************
-	2. What is logic? What are flags?
-		A. Conditionals: if and else
-		B. Naming Conventions: isThisGoodName && doesNeedComments
+Conditionals: Logic comparisons
+	
+
+Naming Conventions: isThisGoodName && doesNeedComments
+	a
 
 
 ******************************************************************************************
