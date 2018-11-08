@@ -1,0 +1,98 @@
+Author:
+	Tanner Woody 20181111
+
+Purpose:
+	This is a quick cheat sheet for the VIM Text Editor.
+
+Cheatsheet:
+	https://devhints.io/vim
+File Extensions
+	.doc .txt .sql .java .class .xcl --> These all mean something important!
+
+Downfalls to avoid:
+	** IF MAC (UNIX/LINUX) READ cntrl AS command **
+
+	Touching the Mouse/Trackpad
+		Try to avoid touching the mousepad, and remember that vim is purposed
+		around all of the instances we as developers have to go through where
+		a mouse is not available.
+	cntrl+s		-- Save
+	contrl+c		-- Copy
+	contrl+v		-- Paste
+	contrl+f		-- Find/search
+	contrl+z		-- Undo
+	contrl+y		-- Redo
+	Home
+	End
+	pgDown
+	pgUp
+	x				-- DO NOT HIT THE X BUTTON TO CLOSE YOUR WINDOW!!!
+
+Modes:
+	For our purpose:
+		Normal and Insert
+	Other Modes:
+		Replace, Record, Visual, Search
+
+Basic Understanding:
+	Vim can open anything. To open something:
+		vim myfile.txt
+	Vim begins in normal mode.
+	Vim can be (q)uit
+	Vim can (w)rite to disk. Writing to disk is AKA saving.
+	Vim can undo changes.
+	Vim can redo changes.
+	To quit, write to disk, or enter an operating command, either a colon, esc,
+		or a forward slash must be used.
+
+Needed commands for this project:
+	Normal Mode:
+		/					--> Enter Search Mode
+		i					--> Enter Insert Mode
+		q					--> Enter (and exit) recording mode
+		v					--> Enter Visual Mode
+		cntrl+v			--> Enter Visual Block Mode
+
+		:q					--> quit editing the file
+		:q!				--> FORCE quit editing the file (avoid this if you can...)
+		:w					--> write to disk
+
+		dd  				--> delete the current line; Stores like `yy`; i.e. CUT;
+		yy					--> yank (i.e. cp) the current line
+		p					--> paste what is on the clipboard
+		u					--> undo last change
+		cntrl+r			--> redo last change
+		esc				--> Exit **** mode
+
+		:999				--> Go to line 999
+		gg					--> Go to head of file
+		G					--> Go to end of file
+		%					--> Go to closing bracket
+		$					--> Go to end of line
+		0					--> Go to begining of line
+
+		:set paste		--> Allow for normal pasting with no funny business
+		:set nopaste	--> Turn pasting back off
+	
+	Search Mode:
+		To enter search mode, type a forward slash (/).
+		Say we are searching for "searchForThis".
+			Type in `searchForThis` after our initial forward slash.
+			Hit enter. We will be sent to the first instance of `searchForThis`.
+			To go to the next instance, hit `n`.
+			To go to the previous instance, hit `N`.
+		To turn case sensitivity off, type `\c` after our first `/`.
+			In `searchForThis`, we can search for `\csearchforthis`, too.
+
+	Insert Mode:
+		Type, delete, text...
+		`esc` will put you back in Normal Mode
+	
+	Visual Mode:
+		`esc` will put you back in Normal Mode
+
+	Replace Mode:
+		`esc` will put you back in Normal Mode
+		
+	Record Mode:
+		`q` will put you back in Normal Mode
