@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-public class TestClass {
-	public Boolean makeHangman(String word, int numOfGuesses){
+public class Hangman {
+	public static Boolean makeHangman(String word, int numOfGuesses){
 		String wordToGuess 		= word;
 		int lengthOfWord			= 6;
 		int maxTries				= numOfGuesses;
@@ -63,13 +63,13 @@ public class TestClass {
 				}
 			}
 		}
-		return false;
 		scanner.close();
+		return false;
 	}
 	public static void main(String[] args) {
 		String word = "banana";
 		int guesses = 7;
-		Boolean success = makeHangman(word, guesses);
+		boolean success = makeHangman(word, guesses);
 		if (success == true){
 			System.out.println("You won");
 		}
